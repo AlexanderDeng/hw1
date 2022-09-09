@@ -8,17 +8,32 @@ will receive no credit for non-recursive solutions.
 To test your program write a separate .cpp file and #include
 split.h.  **Do NOT add main() to this file**.  When you submit
 the function below should be the only one in this file.
+
 */
 
 #include "split.h"
+#include <cstddef>
 
 /* Add a prototype for a helper function here if you need */
 
 void split(Node*& in, Node*& odds, Node*& evens)
 {
-  /* Add code here */
-// WRITE YOUR CODE HERE
-
+  if (in == nullptr) return; //base case
+  else if (in != nullptr)
+  {
+    split(in->next, odds, evens); 
+    
+    if(in->value % 2 == 0)
+    {      
+      in->next = evens; 
+      evens = in;
+    }
+    else if (in->value % 2 != 0)
+    {
+      in->next = odds; 
+      odds = in; 
+    }
+  }
 }
 
 /* If you needed a helper function, write it here */
