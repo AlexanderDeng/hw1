@@ -6,4 +6,4 @@ look at the comments in ulliststr_test.cpp.
 
 each test case test one scenario and/or one function. 
 
-Valgrind works too. No errors. Trust me. 
+Valgrind works too. No errors. 
