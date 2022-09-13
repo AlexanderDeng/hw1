@@ -24,7 +24,7 @@ size_t ULListStr::size() const
   return size_;
 }
 
-void ULListStr::push_back(const std::string& val) //TESTED 
+void ULListStr::push_back(const std::string& val)
 {
   if(tail_ == NULL)
   {
@@ -56,9 +56,9 @@ void ULListStr::push_back(const std::string& val) //TESTED
 }
 
 
-void ULListStr::push_front(const std::string& val) //TESTED 
+void ULListStr::push_front(const std::string& val)
 {
-  if (head_ == NULL) //empty list
+  if (head_ == NULL) 
   {
     head_ = new Item();
     head_->first = 9; 
@@ -67,13 +67,13 @@ void ULListStr::push_front(const std::string& val) //TESTED
     ++size_;
     tail_ = head_;   
   }
-  else if (head_->first > 0) //if space in the node
+  else if (head_->first > 0)
   {
     head_->val[head_->first - 1] = val; 
     head_->first--; 
     ++size_;  
   }
-  else //if no space in the node
+  else
   {
     Item* boof = new Item(); 
     boof->first = 9; 
@@ -87,7 +87,7 @@ void ULListStr::push_front(const std::string& val) //TESTED
   }
 }
 
-void ULListStr::pop_back() //TESTED
+void ULListStr::pop_back() 
 {
   if (tail_ == NULL)
   {
@@ -98,7 +98,7 @@ void ULListStr::pop_back() //TESTED
     tail_->last--; 
     size_--; 
   }
-  if (tail_->first == tail_->last) //if node is now empty delete it 
+  if (tail_->first == tail_->last) 
   {
     if (head_ == tail_)
     {
@@ -116,7 +116,7 @@ void ULListStr::pop_back() //TESTED
   }
 }
 
-void ULListStr::pop_front() //TESTED  
+void ULListStr::pop_front()  
 {
   if (head_ == NULL)
   {
@@ -145,7 +145,7 @@ void ULListStr::pop_front() //TESTED
   }
 }
 
-std::string const & ULListStr::back() const //TESTED 
+std::string const & ULListStr::back() const 
 {
   if (tail_ == NULL)
   {
@@ -154,7 +154,7 @@ std::string const & ULListStr::back() const //TESTED
   return tail_->val[tail_->last - 1];
 }
 
-std::string const & ULListStr::front() const //TESTED  
+std::string const & ULListStr::front() const   
 {
   if (head_ == NULL)
   {
@@ -163,7 +163,7 @@ std::string const & ULListStr::front() const //TESTED
   return head_->val[head_->first]; 
 }
 
-std::string* ULListStr::getValAtLoc(size_t loc) const //to check  
+std::string* ULListStr::getValAtLoc(size_t loc) const  
 {
   if (loc > size_) return NULL; 
   Item* tracker = head_;
